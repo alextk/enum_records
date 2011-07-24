@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "enum_records"
   gem.homepage = "http://github.com/alextk/enum_records"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Allows to create named model records (enums).}
+  gem.description = %Q{This gem allows to created enum records (named records) and to retrieve them easily. Support globalize3 localization in enum fields initialization. }
   gem.email = "tkachev.alex@gmail.com"
   gem.authors = ["Alex Tkachev"]
   # dependencies defined in Gemfile
