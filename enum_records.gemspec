@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "enum_records.gemspec",
     "lib/enum_records.rb",
     "spec/db/database.yml",
     "spec/db/schema.rb",
