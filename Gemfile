@@ -10,4 +10,8 @@ group :development do
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.6.4"
   gem "rcov", ">= 0"
+  gem 'activerecord', '>= 3.0.9'
+  gem 'activesupport', '>= 3.0.9'
+  gem 'sqlite3'
+  gem 'globalize3'
 end
