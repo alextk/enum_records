@@ -1,12 +1,11 @@
 # enum_records
-========================
 
 Description goes here.
 
 # Versions history
 
-* 0.1.1 - Add model instnace accessor method `enum_attributes` to access all fields that were passed at enum definition.
-* 0.1.0 - First release
+* 0.1.1 - added model instnace accessor method `enum_attributes` to access all fields that were passed at enum definition.
+* 0.1.0 - first release
 
 # Contributing to enum_records
  
