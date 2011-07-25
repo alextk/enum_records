@@ -5,23 +5,23 @@
 
 Gem::Specification.new do |s|
   s.name = %q{enum_records}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alex Tkachev"]
-  s.date = %q{2011-07-24}
-  s.description = %q{This gem allows to created enum records (named records) and to retrieve them easily. Support globalize3 localization in enum fields initialization. }
+  s.date = %q{2011-07-25}
+  s.description = %q{This gem allows to create enum records (named records) and to retrieve them easily. Supports globalize3 localization in enum fields initialization. }
   s.email = %q{tkachev.alex@gmail.com}
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
     ".rspec",
     "Gemfile",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
     "enum_records.gemspec",
@@ -45,6 +45,7 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_development_dependency(%q<rdoc>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -54,6 +55,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<sqlite3>, [">= 0"])
       s.add_development_dependency(%q<globalize3>, [">= 0"])
     else
+      s.add_dependency(%q<rdoc>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.3.0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -64,6 +66,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<globalize3>, [">= 0"])
     end
   else
+    s.add_dependency(%q<rdoc>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 2.3.0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
