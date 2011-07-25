@@ -40,7 +40,13 @@ module EnumRecords
     end
 
     module InstanceMethods
-
+      # return this instance enum atttributes as were passed at enum definition
+      # note that all atttributes are returned (both database and non database).
+      # note that database atttribute value can be different from enum attribute value (because it was changed in db by someone else)
+      def enum_attributes
+        enum_column_name =  self.class._enums[:column_name]
+        self.class._enums[:definitions][self.send(enum_column_name)]
+      end
     end
 
   end

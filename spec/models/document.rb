@@ -3,7 +3,7 @@ class Document < ActiveRecord::Base
   
   define_enums do
     home :name => 'Home page'
-    about :name => 'About page'
+    about :name => 'About page', :html_title => 'about us'
     contact_form :name => 'Contact us'
   end
 

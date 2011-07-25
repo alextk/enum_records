@@ -69,6 +69,32 @@ describe "Document" do
     enums.should_not include(@non_enum)
   end
 
+  it 'should have non database attributes accessable' do
+    enum_doc = Document.enum(:about)
+    enum_doc.enum_attributes.should_not be_nil
+    enum_doc.enum_attributes[:html_title].should == 'about us'
+  end
+
+  it 'should return nil if it is not enum record and enum attributes requested' do
+    @non_enum.enum_attributes.should be_nil
+  end
+
+  context "when document is changed in db" do
+    it 'should have db attribute != enum attribute' do
+      enum_doc = Document.enum(:home)
+      enum_doc.name = '1234'
+      enum_doc.save.should be_true
+
+      Document.enum(:home).name.should_not == Document.enum(:home).enum_attributes[:name]
+      Document.enum(:home).enum_attributes[:name].should == 'Home page'
+      Document.enum(:home).name.should == '1234'
+
+      #restore original value
+      enum_doc.name = Document.enum(:home).enum_attributes[:name]
+      enum_doc.save.should be_true
+    end
+  end
+
 end
 
 describe "Page" do
@@ -78,9 +104,9 @@ describe "Page" do
 
   it 'should find 3 defined enums' do
     enums = Page.enums
-    enums.length.should == 3
-    Page.count.should == 4
-    enums.should include(Page.enum(:home), Page.enum(:profile), Page.enum(:project_categories))
+    enums.length.should == 4
+    Page.count.should == 5
+    enums.should include(Page.enum(:home), Page.enum(:profile), Page.enum(:project_categories), Page.enum(:ContactForm))
     enums.should_not include(@non_enum)
   end
 
