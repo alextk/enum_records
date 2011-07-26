@@ -60,7 +60,7 @@ module EnumRecords
 
     def add_new_enum(method_sym, options)
       # Check that the model's translation table exist if locales are passed so that in migration we will not have an exception
-      return if @model_class._enums[:globalized] && !options[:locales].blank? && !@model_class.connection.table_exists?(@model_class.translations_table_name)
+      return if @model_class._enums[:globalized] && !@model_class.connection.table_exists?(@model_class.translations_table_name)
 
       enum_name = method_sym.to_s
       @model_class._enums[:definitions][enum_name] = options
