@@ -2,8 +2,9 @@
 
 Description goes here.
 
-# Versions history
+# Release notes
 
+* 0.1.2 - fixed localized model (with globalize) to wait for tranlsations table to be created
 * 0.1.1 - added model instnace accessor method `enum_attributes` to access all fields that were passed at enum definition.
 * 0.1.0 - first release
 
